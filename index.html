@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>bg</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="img-box">
+                <img src="bookopen.png"  width="100%">
+
+               <div class="img-wrap">
+                <img src="bookclosed.png" id="original" >
+              </div>
+                <span id="line">
+                <img src="arrow3.jpg"  class="arrow">
+            </span>
+            </div>
+
+            
+        </div>
+        <script>
+            var imgbox=document.querySelector(".img-box");
+            var imgwrap=document.querySelector(".img-wrap");
+            var original=document.getElementById("original");
+            var line = document.getElementById("line");
+            original.style.width=imgbox.offsetWidth+"px";
+            
+          var leftspace=imgbox.offsetLeft;
+         
+            imgbox.onmousemove=function(e){
+                var boxWidth=(e.pageX-leftspace)+"px";
+                imgwrap.style.width=boxWidth;
+                line.style.left = boxWidth;
+            };
+        </script>
+    </body>
+</html>
